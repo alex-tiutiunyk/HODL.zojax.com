@@ -1,11 +1,24 @@
 import React from 'react';
-import styles from './Header.module.css';
+import './header.css';
 
 const Header = () => {
   const [isMenu, setIsMenu] = React.useState(false);
   const [menuActive, setMenuActive] = React.useState({});
   const [overlayActive, setOverlayActive] = React.useState({});
-  const links = ['Buy BTC', 'Sell BTC'];
+  const links = [
+    {
+      value: 'Buy BTC',
+      class: null,
+    },
+    {
+      value: 'Sell BTC',
+      class: null,
+    },
+    {
+      value: 'P2P Lending',
+      class: 'bitcoin',
+    },
+  ];
 
   const handleMenu = () => {
     setIsMenu((prev) => !prev);
@@ -23,30 +36,36 @@ const Header = () => {
   };
 
   return (
-    <header className={styles.header}>
-      <div className={styles.container}>
-        <strong className={styles.logo}>
-          <a href='#' className={styles.logoLink}>
+    <header id='header'>
+      <div className='header__container'>
+        <strong className='logo'>
+          <a href='#' className='logo__link'>
             Zogax
           </a>
         </strong>
-        <div className={styles.mobileMenu} style={menuActive}>
-          <div className='links'>
-            <ul className='list'>
-              {links.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
-            <span className='bitcoin'>
-              <a href='#'>bitcoin</a>
-            </span>
+        <div className='mobile-menu' style={menuActive}>
+          <div className='mobile-menu__btn-holder'>
+            <button className='mobile-menu__close' onClick={handleMenu}>
+              x
+            </button>
           </div>
-          <div className='user-links'>
-            <button className='btn btn-text'>Log in</button>
-            <button className='btn btn-primary'>Log in</button>
+          <div className='mobile-menu--scroll'>
+            <div className='mobile-menu__links'>
+              <ul className='mobile-menu__list'>
+                {links.map((item, i) => (
+                  <li key={i} className={item.class}>
+                    <a href='#'>{item.value}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className='mobile-menu_user-links'>
+              <button className='btn btn-primary'>Sign up</button>
+              <button className='btn'>Log in</button>
+            </div>
           </div>
         </div>
-        <button className={styles.burger} onClick={handleMenu}>
+        <button className='burger' onClick={handleMenu}>
           burger
         </button>
       </div>
