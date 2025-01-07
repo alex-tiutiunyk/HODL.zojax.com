@@ -5,6 +5,7 @@
   width: 100%;
   background-color: white;
   border-bottom: 1px solid #146ec4;
+  z-index: 10;
 
   .overlay {
     @media (min-width: 768px) {

@@ -30,7 +30,7 @@ const Header = () => {
         return { transform: 'translateX(0)', opacity: 1 };
       });
       setOverlayActive(() => {
-        return { opacity: 1, zIndex: 100 };
+        return { opacity: 1, width: '100%', height: '100vh' };
       });
     }
   };
@@ -62,8 +62,12 @@ const Header = () => {
               </ul>
             </div>
             <div className='mobile-menu_user-links'>
-              <button className='btn btn-primary'>Sign up</button>
-              <button className='btn'>Log in</button>
+              <a href='#' className='btn btn-primary'>
+                Sign up
+              </a>
+              <a href='#' className='btn'>
+                Log in
+              </a>
             </div>
           </div>
         </div>

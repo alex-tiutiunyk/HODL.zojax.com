@@ -1,11 +1,13 @@
-import './App.css';
 import Header from './components/Header/Header';
+import Visual from './components/Visual/Visual';
 
 function App() {
   return (
     <>
-      <Header />
-      <h1>Index</h1>
+      <div id='wrapper'>
+        <Header />
+        <Visual />
+      </div>
     </>
   );
 }
