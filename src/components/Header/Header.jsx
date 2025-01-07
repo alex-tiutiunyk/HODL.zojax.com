@@ -1,5 +1,5 @@
 import React from 'react';
-import './header.css';
+import './header.scss';
 
 const Header = () => {
   const [isMenu, setIsMenu] = React.useState(false);
@@ -49,12 +49,14 @@ const Header = () => {
               x
             </button>
           </div>
-          <div className='mobile-menu--scroll'>
+          <div className='mobile-menu_content scroll'>
             <div className='mobile-menu__links'>
               <ul className='mobile-menu__list'>
                 {links.map((item, i) => (
                   <li key={i} className={item.class}>
-                    <a href='#'>{item.value}</a>
+                    <a href='#'>
+                      <span className='text'>{item.value}</span>
+                    </a>
                   </li>
                 ))}
               </ul>

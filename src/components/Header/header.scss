@@ -1,0 +1,266 @@
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid #146ec4;
+
+  .overlay {
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+.header__container {
+  max-width: 1440px;
+  padding: 5px 1.25rem;
+  height: 62px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    gap: 29px;
+    height: 54px;
+  }
+
+  @media (min-width: 1280px) {
+    height: 62px;
+  }
+}
+
+.logo {
+  background-image: url('/images/logo.svg');
+  background-size: 100% 100%;
+  width: 107px;
+  height: 23px;
+
+  @media (min-width: 768px) {
+    margin-left: 0.875rem;
+  }
+}
+
+.logo__link {
+  display: block;
+  height: 100%;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+.burger {
+  display: none;
+
+  @media (max-width: 767px) {
+    background: url('/icons/burger.svg');
+    background-size: 100% 100%;
+    width: 24px;
+    height: 24px;
+    text-indent: -9999px;
+    overflow: hidden;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: block;
+  }
+}
+
+.mobile-menu {
+  @media (max-width: 767px) {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    padding-top: 63px;
+    transform: translateX(100%);
+    opacity: 0;
+    border-radius: 0;
+    width: 334px;
+    z-index: 101;
+    background-color: white;
+    transition: transform 0.2s cubic-bezier(0, 0, 0.4, 1) 0.1s,
+      opacity 0.2s cubic-bezier(0, 0, 0.4, 1) 0.1s;
+  }
+  @media (min-width: 768px) {
+    padding-right: 0.875rem;
+  }
+}
+
+.mobile-menu {
+  @media (min-width: 768px) {
+    flex-grow: 1;
+  }
+}
+
+.mobile-menu__btn-holder {
+  @media (max-width: 767px) {
+    padding: 21px 25px 29px;
+    background-color: white;
+    border-bottom: 1px solid #e6e8eb;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.mobile-menu__close {
+  display: block;
+  margin-left: auto;
+  background: url('/icons/close.svg');
+  background-size: 100% 100%;
+  width: 12px;
+  height: 12px;
+  text-indent: -9999px;
+  overflow: hidden;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.mobile-menu_content {
+  &.scroll {
+    @media (max-width: 767px) {
+      overflow-y: auto;
+      overflow-x: hidden;
+      height: calc(100vh - 63px);
+    }
+  }
+
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.mobile-menu__links {
+  @media (max-width: 767px) {
+    padding: 29px 29px 24px;
+  }
+}
+
+.mobile-menu__list {
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 29px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    gap: 19px;
+  }
+}
+
+.mobile-menu__list a {
+  text-decoration: none;
+  color: #222f2c;
+}
+
+.mobile-menu__list .bitcoin {
+  display: flex;
+  align-items: center;
+
+  &:before {
+    @media (min-width: 768px) {
+      content: '';
+      width: 2px;
+      height: 16px;
+      background: #146ec4;
+      opacity: 0.5;
+      margin: 0 17px 0 -2px;
+    }
+  }
+
+  a {
+    color: #0ba198;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      vertical-align: top;
+      margin: -2px 8px 0 0;
+      background: url('/icons/bitcoin.svg');
+      background-size: 100% 100%;
+      width: 24px;
+      height: 24px;
+    }
+
+    .text {
+      @media (min-width: 768px) and (max-width: 1279px) {
+        display: none;
+      }
+    }
+  }
+}
+
+.mobile-menu_user-links {
+  display: flex;
+  gap: 26px;
+
+  @media (max-width: 767px) {
+    padding: 24px 20px 24px;
+    border-top: 1px solid #e6e8eb;
+    flex-direction: column;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row-reverse;
+    gap: 15px;
+  }
+}
+
+/* buttons */
+.btn {
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: #212529;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  height: 3rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 6px 20px;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  white-space: nowrap;
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #146ec4;
+  border-color: #146ec4;
+}
+
+.mobile-menu .btn {
+  width: 100%;
+  font-weight: 600;
+
+  @media (min-width: 768px) {
+    height: 2.5rem;
+    padding: 0.5rem 0.625rem;
+    border-radius: 8px;
+    line-height: 16px;
+  }
+}
