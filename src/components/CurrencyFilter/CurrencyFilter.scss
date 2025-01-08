@@ -16,6 +16,9 @@
   transition: all 0.275s;
   background-color: #e6e8eb;
   bottom: 0;
+  padding: 13px 21px;
+  text-align: center;
+  font-weight: 500;
 
   &:after {
     display: none;
@@ -25,6 +28,7 @@
 .react-tabs__tab--selected {
   background: #fff;
   border-radius: 0;
+  color: #146ec4;
 }
 
 .react-tabs__tab:first-child {
