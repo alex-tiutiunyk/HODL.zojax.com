@@ -1,4 +1,4 @@
-import './visual.scss';
+import './Visual.scss';
 
 const Visual = () => {
   return (

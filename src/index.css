@@ -7,7 +7,18 @@ body {
   font: 1em/19px Emoji Chrome mac os, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-  color: #6f7782;
+  color: #222f2c;
+}
+
+a {
+  color: #146ec4;
+  text-decoration: none;
+  transition: all 0.1s linear;
+
+  &:hover:not(.btn) {
+    text-decoration: none;
+    color: #05447f;
+  }
 }
 
 .overlay {

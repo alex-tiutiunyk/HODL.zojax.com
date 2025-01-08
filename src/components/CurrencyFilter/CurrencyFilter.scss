@@ -1,0 +1,40 @@
+.filter-block {
+  background: #fff;
+  box-shadow: 0 0 70px 4px hsla(0, 0%, 72%, 0.25);
+  border-radius: 20px;
+}
+
+.react-tabs__tab-list {
+  margin: 0;
+  border: none;
+}
+
+.react-tabs__tab {
+  width: 50%;
+  border: none;
+  color: #6f7782;
+  transition: all 0.275s;
+  background-color: #e6e8eb;
+  bottom: 0;
+
+  &:after {
+    display: none;
+  }
+}
+
+.react-tabs__tab--selected {
+  background: #fff;
+  border-radius: 0;
+}
+
+.react-tabs__tab:first-child {
+  border-radius: 20px 0 0 0;
+}
+
+.react-tabs__tab:last-child {
+  border-radius: 0 20px 0 0;
+}
+
+.react-tabs__tab-panel {
+  padding: 30px;
+}
