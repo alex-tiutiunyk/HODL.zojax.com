@@ -13,35 +13,49 @@ const CurrencyFilter = () => {
         </TabList>
 
         <TabPanel>
-          <div className='form-row inline'>
-            <label htmlFor='currency'>Currency to Use for Purchase</label>
-            <div className='form-row_holder'>
-              <select id='currency'>
-                <option selected>ILS</option>
-                <option>USD</option>
-              </select>
-            </div>
-          </div>
-          <div className='form-row inline'>
-            <label htmlFor='method'>Payment method</label>
-            <div className='form-row_holder'>
-              <select id='method'>
-                <option selected>Cash</option>
-                <option>Bank Transfer</option>
-              </select>
-              <div className='chip-container'>
-                <button className='badge'>Cash</button>
-                <button className='badge'>Bank Transfer</button>
+          <div className='form'>
+            <div className='form-row inline'>
+              <label htmlFor='currency' className='form-row_label'>
+                Currency to Use for Purchase
+              </label>
+              <div className='form-row_holder'>
+                <div className='select'>
+                  <select id='currency'>
+                    <option selected>ILS</option>
+                    <option>USD</option>
+                  </select>
+                </div>
               </div>
             </div>
-          </div>
-          <div className='form-row inline'>
-            <label htmlFor='purchase'>Purchase</label>
-            <div className='form-row_holder'>
-              <div className='text-field' value='USD'>
-                <input type='text' id='purchase' />
+            <div className='form-row inline'>
+              <label htmlFor='method' className='form-row_label pt-1'>
+                Payment method
+              </label>
+              <div className='form-row_holder'>
+                <div className='select'>
+                  <select id='method'>
+                    <option selected>Cash</option>
+                    <option>Bank Transfer</option>
+                  </select>
+                </div>
+                <div className='chip-container'>
+                  <button className='badge'>Cash</button>
+                  <button className='badge'>Bank Transfer</button>
+                </div>
               </div>
             </div>
+            <div className='form-row inline'>
+              <label htmlFor='purchase' className='form-row_label pt-1'>
+                Purchase
+              </label>
+              <div className='form-row_holder'>
+                <div className='text-field'>
+                  <input type='text' id='purchase' />
+                  <span className='text-field__label'>USD</span>
+                </div>
+              </div>
+            </div>
+            <button className='btn btn-primary'>View offers</button>
           </div>
         </TabPanel>
         <TabPanel>

@@ -11,10 +11,6 @@ function App() {
         <WelcomeSection />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
-        <br />
       </div>
     </>
   );
