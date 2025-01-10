@@ -2,8 +2,18 @@
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import './CurrencyFilter.scss';
+import React from 'react';
 
 const CurrencyFilter = () => {
+  const [currency, setCurrency] = React.useState('ILS');
+
+  const currencies = ['ILS', 'USD'];
+  const methods = ['Cash', 'Bank Transfer'];
+
+  const handleSelect = (e) => {
+    setCurrency(e.target.value);
+  };
+
   return (
     <div className='filter-block'>
       <Tabs>
@@ -20,9 +30,12 @@ const CurrencyFilter = () => {
               </label>
               <div className='form-row_holder'>
                 <div className='select'>
-                  <select id='currency'>
-                    <option selected>ILS</option>
-                    <option>USD</option>
+                  <select id='currency' defaultValue={currency} onChange={handleSelect}>
+                    {currencies.map((item, i) => (
+                      <option key={i} value={item}>
+                        {item}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </div>
@@ -33,9 +46,12 @@ const CurrencyFilter = () => {
               </label>
               <div className='form-row_holder'>
                 <div className='select'>
-                  <select id='method'>
-                    <option selected>Cash</option>
-                    <option>Bank Transfer</option>
+                  <select id='method' defaultValue='Cash'>
+                    {methods.map((item, i) => (
+                      <option key={i} value={item}>
+                        {item}
+                      </option>
+                    ))}
                   </select>
                 </div>
                 <div className='chip-container'>
@@ -45,13 +61,13 @@ const CurrencyFilter = () => {
               </div>
             </div>
             <div className='form-row inline'>
-              <label htmlFor='purchase' className='form-row_label pt-1'>
-                Purchase
+              <label htmlFor='purchase' className='form-row_label'>
+                Purchase Amount
               </label>
               <div className='form-row_holder'>
                 <div className='text-field'>
                   <input type='text' id='purchase' />
-                  <span className='text-field__label'>USD</span>
+                  <span className='text-field__label'>{currency}</span>
                 </div>
               </div>
             </div>

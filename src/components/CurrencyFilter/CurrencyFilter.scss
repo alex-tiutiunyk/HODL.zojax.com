@@ -63,13 +63,7 @@
 
 .form-row_label {
   @media (min-width: 768px) {
-    flex-basis: 124px;
-  }
-
-  &.pt-1 {
-    @media (min-width: 768px) {
-      padding-top: 12px;
-    }
+    flex-basis: 118px;
   }
 }
 

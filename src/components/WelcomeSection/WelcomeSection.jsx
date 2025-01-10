@@ -7,8 +7,10 @@ const WelcomeSection = () => {
       <div className='welcome-section__container'>
         <header className='welcome-section__head'>
           <h1 className='welcome-section_title'>Welcome to Zojax</h1>
-          <p>Anonymous P2P deals on your terms. Trade globally.</p>
-          <p>Using any payment system. For any currency.</p>
+          <p>
+            The only Cryptocurrency P2P exchange based trusted transactions between Buyer/Seller
+            guaranteed by Zojax Group, LLC
+          </p>
         </header>
         <CurrencyFilter />
       </div>

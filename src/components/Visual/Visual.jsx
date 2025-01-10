@@ -10,6 +10,7 @@ const Visual = () => {
         <br />
         Exchange Platform
       </h1>
+      <img src='HODL.zojax.com/images/img-tangem.webp' alt='Tangem wallet' />
     </div>
   );
 };
